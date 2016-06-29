@@ -18,7 +18,7 @@ GZFLAGS		:=-9
 KBUILD_DEFCONFIG := defconfig
 
 KBUILD_CFLAGS	+= -mgeneral-regs-only
-KBUILD_CFLAGS	+= -fno-pic -mtune=cortex-a53 -march=armv8-a
+KBUILD_CFLAGS	+= -fno-pic -mtune=cortex-a53 -march=armv8-a -O2 -ftree-vectorize
 KBUILD_CPPFLAGS	+= -mlittle-endian
 AS		+= -EL
 LD		+= -EL
