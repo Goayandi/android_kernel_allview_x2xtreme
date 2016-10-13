@@ -156,13 +156,6 @@ enum zone_stat_item {
 #endif
 	NR_ANON_TRANSPARENT_HUGEPAGES,
 	NR_FREE_CMA_PAGES,
-<<<<<<< HEAD
-=======
-#endif
-#ifdef CONFIG_UKSM
-	NR_UKSM_ZERO_PAGES,
-#endif
->>>>>>> 3a34dc1... add uksm 0.1.2.3 for v3.10 .ge.46.patch
 	NR_VM_ZONE_STAT_ITEMS };
 
 /*
