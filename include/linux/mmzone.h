@@ -156,6 +156,10 @@ enum zone_stat_item {
 #endif
 	NR_ANON_TRANSPARENT_HUGEPAGES,
 	NR_FREE_CMA_PAGES,
+#endif
+#ifdef CONFIG_UKSM
+	NR_UKSM_ZERO_PAGES,
+#endif
 	NR_VM_ZONE_STAT_ITEMS };
 
 /*
