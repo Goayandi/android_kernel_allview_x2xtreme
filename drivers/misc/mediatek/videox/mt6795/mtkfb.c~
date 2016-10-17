@@ -1333,23 +1333,23 @@ static int mtkfb_ioctl(struct fb_info *info, unsigned int cmd, unsigned long arg
         return (r);
     }
 
-//    case MTKFB_CAPTURE_FRAMEBUFFER:
-//    {
-//        unsigned int pbuf = 0;
-//        if (copy_from_user(&pbuf, (void __user *)arg, sizeof(pbuf)))
-//        {
-//            MTKFB_LOG("[FB]: copy_from_user failed! line:%d \n", __LINE__);
-//            r = -EFAULT;
-//        }
-//        else
-//        {
-//            dprec_logger_start(DPREC_LOGGER_WDMA_DUMP, 0, 0);
-//            primary_display_capture_framebuffer_ovl(pbuf, eBGRA8888);
-//            dprec_logger_done(DPREC_LOGGER_WDMA_DUMP, 0, 0);
-//        }
-//
-//        return (r);
-//    }
+    case MTKFB_CAPTURE_FRAMEBUFFER:
+    {
+        unsigned int pbuf = 0;
+        if (copy_from_user(&pbuf, (void __user *)arg, sizeof(pbuf)))
+        {
+            MTKFB_LOG("[FB]: copy_from_user failed! line:%d \n", __LINE__);
+            r = -EFAULT;
+        }
+        else
+        {
+            dprec_logger_start(DPREC_LOGGER_WDMA_DUMP, 0, 0);
+            primary_display_capture_framebuffer_ovl(pbuf, eBGRA8888);
+            dprec_logger_done(DPREC_LOGGER_WDMA_DUMP, 0, 0);
+        }
+
+        return (r);
+    }
 
     case MTKFB_SLT_AUTO_CAPTURE:
     {
@@ -1508,18 +1508,18 @@ static int mtkfb_ioctl(struct fb_info *info, unsigned int cmd, unsigned long arg
 
 #endif // MTK_FB_OVERLAY_SUPPORT
 
-//    case MTKFB_META_RESTORE_SCREEN:
-//    {
-//        struct fb_var_screeninfo var;
-//
-//		if (copy_from_user(&var, argp, sizeof(var)))
-//			return -EFAULT;
-//
-//        info->var.yoffset = var.yoffset;
-//        init_framebuffer(info);
-//
-//        return mtkfb_pan_display_impl(&var, info);
-//    }
+    case MTKFB_META_RESTORE_SCREEN:
+    {
+        struct fb_var_screeninfo var;
+
+		if (copy_from_user(&var, argp, sizeof(var)))
+			return -EFAULT;
+
+        info->var.yoffset = var.yoffset;
+        init_framebuffer(info);
+
+        return mtkfb_pan_display_impl(&var, info);
+    }
 
 	
     case MTKFB_GET_DEFAULT_UPDATESPEED:

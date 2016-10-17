@@ -745,7 +745,6 @@ const char * const vmstat_text[] = {
 #endif
 	"nr_anon_transparent_hugepages",
 	"nr_free_cma",
-#endif
 #ifdef CONFIG_UKSM
 	"nr_uksm_zero_pages",
 #endif
