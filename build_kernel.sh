@@ -11,7 +11,7 @@
 # define path to android 6.X sources
 # Note: Set his value!
 ##############################################################################
-ANDROID_SOURCES=~/Desktop/cm
+ANDROID_SOURCES=~/cm
 
 ##############################################################################
 # set toolchain
@@ -19,7 +19,7 @@ ANDROID_SOURCES=~/Desktop/cm
 export ARCH=arm64
 export SUBARCH=arm64
 export CROSS_COMPILE=$ANDROID_SOURCES/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
-export MY_CONFIG=gionee6795_lwt_l1_defconfig
+export MY_CONFIG=cyanogenmod_x2xtreme_defconfig
 
 ##############################################################################
 # set variables
